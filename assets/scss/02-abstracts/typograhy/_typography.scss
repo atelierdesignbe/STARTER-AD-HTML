@@ -1,0 +1,34 @@
+//=================================================================
+//=================================================================
+//============= DESIGN SYSTEM: Typography =============
+//=================================================================
+//=================================================================
+
+//============= Example =============
+
+
+@mixin typo_header1-light {
+    @include Example;
+    font-size: toRem(40);
+    line-height: toRem(53);
+
+    @include tablet {
+        font-size: toRem(76);
+        line-height: toRem(106);
+    }
+
+    @include laptop {
+        font-size: toRem(85);
+        line-height: toRem(106);
+    }
+
+    @include desktop {
+        font-size: toRem(98);
+        line-height: toRem(116);
+    }
+
+    @include k4 {
+        font-size: toRem(98);
+        line-height: toRem(116);
+    }
+  }

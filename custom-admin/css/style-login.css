@@ -1,0 +1,29 @@
+body {
+	background: #ffffff !important;
+}
+h1 a {
+	background-image: url('../images/client-logo.svg') !important;
+	background-size: 80% !important;
+	background-position: center center !important;
+	height: 100px !important;
+	width: 280px !important;
+}
+.login form {
+	background: #f2f2f2 !important;
+	box-shadow: none !important;
+	border: none !important;
+}
+
+input#user_login.input:focus,
+input#user_pass.input.password-input:focus {
+	border-color: #7ab7db !important;
+	box-shadow: none !important;
+}
+
+#wp-submit.button.button-primary.button-large {
+	background: #141414 !important;
+	border-color: #141414 !important;
+	box-shadow: none !important;
+	text-shadow: none !important;
+	color: #ffffff !important;
+}

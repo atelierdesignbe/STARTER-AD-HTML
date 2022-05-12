@@ -1,0 +1,42 @@
+{
+  "name": "atelier-design-theme",
+  "version": "1.1.0",
+  "description": "Atelier Design Wordpress theme",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "keywords": [],
+  "author": "Cyrille Guillaume",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "autoprefixer": "^10.4.0",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.27.9",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^6.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "include-media": "^1.4.10",
+    "include-media-columns": "^1.2.0",
+    "mini-css-extract-plugin": "^2.2.0",
+    "postcss": "^8.4.4",
+    "postcss-loader": "^6.1.1",
+    "postcss-preset-env": "^7.0.1",
+    "sass": "^1.44.0",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.51.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0",
+    "webpack-merge": "^5.8.0"
+  }
+}

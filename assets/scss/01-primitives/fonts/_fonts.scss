@@ -1,0 +1,21 @@
+// ******** IMPORT FONTS
+
+// Font name
+// @font-face {
+//     font-family: 'Example';
+//     src: url('/assets/fonts/Example/Example.woff2') format('woff2'),
+//         url('/assets/fonts/Example/Example.woff') format('woff');
+//     font-weight: 900;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+
+
+// ******** MIXINS FONTS
+// Example
+
+
+@mixin Example {
+    font-family: 'Example';
+}

@@ -1,0 +1,207 @@
+// ------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
+//  -   GRID VARIABLES
+// ------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
+
+$d-col-count: 23;
+$l-col-count: 23;
+$t-col-count: 17;
+$m-col-count: 11;
+$max-col-count: $d-col-count;
+
+$maxCol: 8rem;
+$dCol: calc(90vw / $d-col-count);
+$lCol: calc(85vw / $l-col-count);
+$tCol: calc(90vw / $t-col-count);
+$mCol: 7.8vw;
+   
+$max-grid-size: calc(#{$maxCol} * #{$max-col-count});
+$d-grid-size: calc(#{$dCol} * #{$d-col-count});
+$l-grid-size: calc(#{$lCol} * #{$l-col-count});
+$t-grid-size: calc(#{$tCol} * #{$t-col-count});
+$m-grid-size: calc(#{$mCol} * #{$m-col-count});
+
+$mGridMargin: calc((100vw - #{$m-grid-size}) / 2);
+$tGridMargin: calc((100vw - #{$t-grid-size}) / 2);
+$lGridMargin: calc((100vw - #{$l-grid-size}) / 2);
+$dGridMargin: calc((100vw - #{$d-grid-size}) / 2);
+$maxGridMargin: calc((100vw - #{$max-grid-size}) / 2);
+
+$mGridMarginNeg: calc((100vw - #{$m-grid-size}) / -2);
+$tGridMarginNeg: calc((100vw - #{$t-grid-size}) / -2);
+$lGridMarginNeg: calc((100vw - #{$l-grid-size}) / -2);
+$dGridMarginNeg: calc((100vw - #{$d-grid-size}) / -2);
+$maxGridMarginNeg: calc((100vw - #{$max-grid-size}) / -2);
+
+.fullV-m {
+  width: 100vw;
+}
+.fullV-t {
+  @include tablet {
+    width: 100vw;
+  }
+}
+.fullV-l {
+  @include laptop {
+    width: 100vw;
+  }
+}
+.fullV-d {
+  @include desktop {
+    width: 100vw;
+  }
+}
+
+.fullV-max {
+  @include k4 {
+    width: $max-grid-size;
+  }
+}
+
+.mCol-full {
+  width: $m-grid-size;
+}
+.tCol-full {
+  @include tablet {
+    width: $t-grid-size;
+  }
+}
+.lCol-full {
+  @include laptop {
+    width: $l-grid-size;
+  }
+}
+.dCol-full {
+  @include desktop {
+    width: $d-grid-size;
+  }
+}
+
+.maxCol-full {
+  @include k4 {
+    width: $max-grid-size;
+  }
+}
+
+@for $i from 1 through $m-col-count {
+  .mCol-#{$i} {
+    width: calc(#{$i} * #{$mCol});
+  }
+  .mLeft-#{$i} {
+    margin-left: calc(#{$i} * #{$mCol});
+  }
+  .mRight-#{$i} {
+    margin-right: calc(#{$i} * #{$mCol});
+  }
+}
+
+@for $i from 1 through $t-col-count {
+  @include tablet {
+    .tCol-#{$i} {
+      width: calc(#{$i} * #{$tCol});
+    }
+    .tLeft-#{$i} {
+      margin-left: calc(#{$i} * #{$tCol});
+    }
+    .tRight-#{$i} {
+      margin-right: calc(#{$i} * #{$tCol});
+    }
+  }
+}
+
+@for $i from 1 through $l-col-count {
+  @include laptop {
+    .lCol-#{$i} {
+      width: calc(#{$i} * #{$lCol});
+    }
+    .lLeft-#{$i} {
+      margin-left:calc( #{$i}* #{$lCol});
+    }
+    .lRight-#{$i} {
+      margin-right: calc(#{$i}* #{$lCol});
+    }
+  }
+}
+
+@for $i from 1 through $d-col-count {
+  @include desktop {
+    .dCol-#{$i} {
+      width: calc(#{$i} * #{$dCol});
+    }
+    .dLeft-#{$i} {
+      margin-left: calc(#{$i} * #{$dCol});
+    }
+    .dRight-#{$i} {
+      margin-right: calc(#{$i} * #{$dCol});
+    }
+  }
+}
+
+@for $i from 1 through $max-col-count {
+  @include k4 {
+    .maxCol-#{$i} {
+      width: calc(#{$i} * #{$maxCol});
+    }
+    .maxLeft-#{$i} {
+      margin-left: calc(#{$i} * #{$maxCol});
+    }
+    .maxRight-#{$i} {
+      margin-right: calc(#{$i} * #{$maxCol});
+    }
+  }
+}
+
+@mixin grid {
+  position: relative;
+  margin: 0 auto;
+  width: $m-grid-size;
+  // max-width: 440px;
+
+  @include tablet {
+    width: $t-grid-size;
+    max-width: unset;
+  }
+
+  @include laptop {
+    width: $l-grid-size;
+  }
+  @include desktop {
+    width: $d-grid-size;
+  }
+  @include k4 {
+    width: $max-grid-size;
+  }
+}
+
+@mixin grid-helper {
+  display: grid;
+  margin: auto;
+  grid-template-rows: auto;
+  width: $m-col-count * $mCol;
+  grid-template-columns: repeat(#{$m-col-count}, $mCol);
+
+  @include tablet {
+    width: calc(#{$t-col-count} * #{$tCol});
+    grid-template-columns: repeat(#{$t-col-count}, $tCol);
+  }
+  @include laptop {
+    width: calc(#{$l-col-count} * #{$lCol});
+    grid-template-columns: repeat(#{$l-col-count}, $lCol);
+  }
+  @include desktop {
+    width: calc(#{$d-col-count} * #{$dCol});
+    grid-template-columns: repeat(#{$d-col-count}, $dCol);
+  }
+  @include k4 {
+    width: calc(#{$max-col-count} * #{$maxCol});
+    grid-template-columns: repeat(#{$max-col-count}, $maxCol);
+  }
+}
+
+.grid {
+  @include grid;
+}
+.grid-helper {
+  @include grid-helper;
+}
